@@ -4,12 +4,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NautiCheck - Landing</title>
+    <title>NautiCheck - Achetez votre bateau d'occasion en toute confiance</title>
+    <meta name="description" content="Évitez les mauvaises surprises lors de l'achat de votre bateau d'occasion.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .email-form {
+            max-width: 500px;
+            margin: 30px auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .email-input {
+            flex: 1;
+            padding: 18px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+        }
+
+        .submit-button {
+            padding: 18px 40px;
+            background: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .email-form {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <h1>🚤 NautiCheck</h1>
-    <p>Évitez les mauvaises surprises lors de l'achat de votre bateau d'occasion</p>
+    <section class="hero">
+        <h1>🚤 Évitez les mauvaises surprises</h1>
+        <p class="subtitle">Achetez votre bateau d'occasion en toute confiance</p>
+        <a href="#cta" class="cta-button">Rejoindre l'accès anticipé</a>
+    </section>
+
+    <div class="container">
+        <h2 class="section-title">Comment NautiCheck vous aide</h2>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">✓</div>
+                <h3>Checklist intelligente</h3>
+                <p>Critères personnalisés selon vos priorités et le type de bateau</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🔍</div>
+                <h3>Analyse automatique</h3>
+                <p>Extraction des infos clés et détection des incohérences</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <h3>Estimation de coûts</h3>
+                <p>Anticipez les réparations et équipements manquants</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <h3>Comparaison objective</h3>
+                <p>Visualisez forces et faiblesses de chaque bateau</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="cta-section" id="cta">
+        <h2>Prêt à acheter sereinement ?</h2>
+        <p>Rejoignez l'accès anticipé</p>
+
+        <form class="email-form">
+            <input type="email" class="email-input" placeholder="Votre email" required>
+            <button type="submit" class="submit-button">Je m'inscris</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2026 NautiCheck - Conçu pour les acheteurs de bateaux</p>
+    </footer>
 </body>
 
 </html>
