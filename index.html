@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NautiCheck - Achetez votre bateau d'occasion en toute confiance</title>
-    <meta name="description" content="Évitez les mauvaises surprises lors de l'achat de votre bateau d'occasion.">
+    <meta name="description"
+        content="Évitez les mauvaises surprises lors de l'achat de votre bateau d'occasion. Checklist intelligente, analyse automatique et estimation des coûts.">
     <style>
         * {
             margin: 0;
@@ -14,26 +15,52 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: #2c3e50;
+            background: #ffffff;
         }
 
+        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 100px 20px;
+            padding: 80px 20px 100px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h100v100H0z" fill="none"/><path d="M50 20c-8.284 0-15 6.716-15 15 0 11.046 15 25 15 25s15-13.954 15-25c0-8.284-6.716-15-15-15z" fill="white" opacity="0.05"/></svg>') repeat;
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .hero h1 {
             font-size: 3rem;
+            font-weight: 700;
             margin-bottom: 20px;
+            line-height: 1.2;
         }
 
         .hero .subtitle {
             font-size: 1.4rem;
             margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
         }
 
         .cta-button {
@@ -45,49 +72,127 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 1.2rem;
+            transition: all 0.3s ease;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Problem Section */
+        .problem {
+            padding: 80px 20px;
+            background: #f8f9fa;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 80px 20px;
         }
 
         .section-title {
             font-size: 2.5rem;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 20px;
+            color: #2c3e50;
         }
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-
-        .feature {
+        .section-subtitle {
             text-align: center;
-            padding: 30px;
-            background: #f8f9fa;
-            border-radius: 15px;
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .feature-icon {
-            font-size: 4rem;
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .problem-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .problem-icon {
+            font-size: 3rem;
             margin-bottom: 20px;
         }
 
-        .feature h3 {
-            font-size: 1.5rem;
+        .problem-card h3 {
+            font-size: 1.3rem;
             margin-bottom: 15px;
             color: #667eea;
         }
 
+        /* Features Section */
+        .features {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .feature:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .feature-image {
+            flex: 1;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.2);
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #f8f9fa;
+        }
+
+        .feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .feature-image.emoji-placeholder {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-size: 4rem;
+        }
+
+        .feature-content {
+            flex: 1;
+        }
+
+        .feature-content h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .feature-content p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            line-height: 1.8;
+        }
+
+        /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -95,9 +200,20 @@
             text-align: center;
         }
 
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
         .email-form {
             max-width: 500px;
-            margin: 30px auto;
+            margin: 0 auto;
             display: flex;
             gap: 10px;
         }
@@ -108,6 +224,7 @@
             border: none;
             border-radius: 50px;
             font-size: 1.1rem;
+            outline: none;
         }
 
         .submit-button {
@@ -116,10 +233,18 @@
             color: white;
             border: none;
             border-radius: 50px;
+            font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
 
+        .submit-button:hover {
+            background: #34495e;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
         footer {
             background: #2c3e50;
             color: white;
@@ -127,67 +252,174 @@
             padding: 40px 20px;
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .feature {
+                flex-direction: column !important;
+                gap: 30px;
+            }
+
+            .section-title {
                 font-size: 2rem;
             }
 
             .email-form {
                 flex-direction: column;
             }
+
+            .feature-image {
+                min-height: 200px;
+            }
         }
     </style>
 </head>
 
 <body>
+    <!-- Hero Section -->
     <section class="hero">
-        <h1>🚤 Évitez les mauvaises surprises</h1>
-        <p class="subtitle">Achetez votre bateau d'occasion en toute confiance</p>
-        <a href="#cta" class="cta-button">Rejoindre l'accès anticipé</a>
+        <div class="hero-content">
+            <h1>🚤 Évitez les mauvaises surprises</h1>
+            <p class="subtitle">
+                Achetez votre bateau d'occasion en toute confiance avec NautiCheck
+            </p>
+            <a href="#cta" class="cta-button">Rejoindre l'accès anticipé →</a>
+        </div>
     </section>
 
-    <div class="container">
-        <h2 class="section-title">Comment NautiCheck vous aide</h2>
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <h2 class="section-title">Acheter un bateau, c'est stressant</h2>
+            <p class="section-subtitle">
+                Vous passez des heures à comparer, vous craignez les mauvaises surprises,
+                et vous ne savez pas quoi vérifier exactement...
+            </p>
 
-        <div class="features">
-            <div class="feature">
-                <div class="feature-icon">✓</div>
-                <h3>Checklist intelligente</h3>
-                <p>Critères personnalisés selon vos priorités et le type de bateau</p>
-            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">😰</div>
+                    <h3>Complexité</h3>
+                    <p>Trop de critères à vérifier, vous ne savez pas par où commencer</p>
+                </div>
 
-            <div class="feature">
-                <div class="feature-icon">🔍</div>
-                <h3>Analyse automatique</h3>
-                <p>Extraction des infos clés et détection des incohérences</p>
-            </div>
+                <div class="problem-card">
+                    <div class="problem-icon">💸</div>
+                    <h3>Coûts cachés</h3>
+                    <p>Réparations imprévues qui explosent votre budget après l'achat</p>
+                </div>
 
-            <div class="feature">
-                <div class="feature-icon">💰</div>
-                <h3>Estimation de coûts</h3>
-                <p>Anticipez les réparations et équipements manquants</p>
-            </div>
-
-            <div class="feature">
-                <div class="feature-icon">📊</div>
-                <h3>Comparaison objective</h3>
-                <p>Visualisez forces et faiblesses de chaque bateau</p>
+                <div class="problem-card">
+                    <div class="problem-icon">⏰</div>
+                    <h3>Perte de temps</h3>
+                    <p>Des heures à comparer manuellement des dizaines d'annonces</p>
+                </div>
             </div>
         </div>
-    </div>
-
-    <section class="cta-section" id="cta">
-        <h2>Prêt à acheter sereinement ?</h2>
-        <p>Rejoignez l'accès anticipé</p>
-
-        <form class="email-form">
-            <input type="email" class="email-input" placeholder="Votre email" required>
-            <button type="submit" class="submit-button">Je m'inscris</button>
-        </form>
     </section>
 
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">NautiCheck vous simplifie la vie</h2>
+            <p class="section-subtitle">
+                Un assistant intelligent qui vous guide à chaque étape de votre achat
+            </p>
+
+            <!-- Feature 1 - AVEC IMAGE -->
+            <div class="feature">
+                <div class="feature-image">
+                    <img src="Pics/Boat listing.png" alt="Boat listing">
+                </div>
+                <div class="feature-content">
+                    <h3>Checklist intelligente</h3>
+                    <p>
+                        Définissez vos critères prioritaires (moteur, confort, sécurité).
+                        NautiCheck génère automatiquement une checklist personnalisée avec
+                        les points essentiels à vérifier selon votre profil et le type de bateau.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 2 - AVEC IMAGE -->
+            <div class="feature">
+                <div class="feature-image">
+                    <img src="Pics/Boat risk assessment.png" alt="Risk assessment">
+                </div>
+                <div class="feature-content">
+                    <h3>Analyse automatique des annonces</h3>
+                    <p>
+                        Collez simplement le lien d'une annonce. L'IA extrait toutes les
+                        informations importantes et vous alerte sur les incohérences ou
+                        les points suspects à clarifier avec le vendeur.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 3 - EMOJI (pas d'image) -->
+            <div class="feature">
+                <div class="feature-image emoji-placeholder">
+                    💰
+                </div>
+                <div class="feature-content">
+                    <h3>Estimation des coûts cachés</h3>
+                    <p>
+                        Anticipez les dépenses : remplacement moteur, équipements manquants,
+                        réparations courantes. Comparez le prix demandé avec le coût total
+                        réel pour négocier en connaissance de cause.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 4 - AVEC IMAGE -->
+            <div class="feature">
+                <div class="feature-image">
+                    <img src="Pics/Boat comparison.png" alt="Boat comparison">
+                </div>
+                <div class="feature-content">
+                    <h3>Comparaison objective</h3>
+                    <p>
+                        Visualisez d'un coup d'œil les forces et faiblesses de chaque bateau.
+                        Tableau comparatif clair qui vous aide à prendre la meilleure décision
+                        en fonction de vos priorités.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="cta">
+        <div class="container">
+            <h2>Prêt à acheter sereinement ?</h2>
+            <p>Rejoignez l'accès anticipé et soyez parmi les premiers à tester NautiCheck</p>
+
+            <form class="email-form" action="#" method="POST">
+                <input type="email" class="email-input" placeholder="Votre email" required>
+                <button type="submit" class="submit-button">
+                    Je m'inscris
+                </button>
+            </form>
+
+            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                🔒 Vos données sont protégées. Pas de spam, promis.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>© 2026 NautiCheck - Conçu pour les acheteurs de bateaux</p>
+        <p>© 2026 NautiCheck - Tous droits réservés</p>
+        <p style="margin-top: 10px; opacity: 0.7;">
+            Conçu pour les acheteurs de bateaux qui veulent éviter les mauvaises surprises
+        </p>
     </footer>
 </body>
 
