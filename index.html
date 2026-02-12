@@ -256,7 +256,7 @@
             margin-top: 20px;
         }
 
-        /* CTA Section */
+        /* CTA Section with Tally */
         .cta-section {
             background: linear-gradient(135deg, #1e3a8a 0%, #1e293b 100%);
             color: white;
@@ -266,47 +266,22 @@
 
         .cta-section h2 {
             font-size: 2.5rem;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
-        .cta-section p {
-            font-size: 1.3rem;
+        .cta-section .subtitle-cta {
+            font-size: 1.2rem;
             margin-bottom: 40px;
             opacity: 0.9;
         }
 
-        .email-form {
-            max-width: 500px;
+        .tally-container {
+            max-width: 700px;
             margin: 0 auto;
-            display: flex;
-            gap: 10px;
-        }
-
-        .email-input {
-            flex: 1;
-            padding: 18px 25px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            outline: none;
-        }
-
-        .submit-button {
-            padding: 18px 40px;
             background: white;
-            color: #1e3a8a;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-button:hover {
-            background: #f0f4ff;
-            color: #1e293b;
-            transform: translateY(-2px);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
 
         /* Footer */
@@ -336,12 +311,12 @@
                 font-size: 2rem;
             }
 
-            .email-form {
-                flex-direction: column;
-            }
-
             .feature-image {
                 min-height: 200px;
+            }
+
+            .tally-container {
+                margin: 0 10px;
             }
         }
     </style>
@@ -355,7 +330,7 @@
             <p class="subtitle">
                 L'assistant intelligent qui vous évite les mauvaises surprises
             </p>
-            <a href="#cta" class="cta-button">Rejoindre la liste d'attente →</a>
+            <a href="#cta" class="cta-button">Commencer →</a>
         </div>
     </section>
 
@@ -502,20 +477,20 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- CTA Section with Tally Form -->
     <section class="cta-section" id="cta">
         <div class="container">
-            <h2>Prêt à acheter sereinement ?</h2>
-            <p>Inscrivez-vous à la liste d'attente et soyez parmi les premiers informés</p>
+            <h2>Aidez-nous à créer l'outil parfait pour vous</h2>
+            <p class="subtitle-cta">4 questions rapides pour rejoindre les premiers utilisateurs</p>
 
-            <form class="email-form" action="#" method="POST">
-                <input type="email" class="email-input" placeholder="Votre email" required>
-                <button type="submit" class="submit-button">
-                    Je m'inscris
-                </button>
-            </form>
+            <!-- REMPLACE "VOTRE_CODE_TALLY_ICI" par ton code Tally -->
+            <div class="tally-container">
+                <iframe src="https://tally.so/r/MezYZl?transparentBackground=1&hideTitle=1" width="100%" height="600"
+                    frameborder="0" marginheight="0" marginwidth="0" title="Questionnaire NautiCheck">
+                </iframe>
+            </div>
 
-            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+            <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.8;">
                 🔒 Vos données sont protégées. Pas de spam, promis.
             </p>
         </div>
